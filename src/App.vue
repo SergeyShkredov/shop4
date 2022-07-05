@@ -1,9 +1,9 @@
 <template>
-  <Navbar
-      :cartCount="cartCount"
-      @resetCartCount="resetCartCount"
-      v-if="!['Signup', 'Signin'].includes($route.name)"
-  />
+<!--  <Navbar-->
+<!--      :cartCount="cartCount"-->
+<!--      @resetCartCount="resetCartCount"-->
+<!--      v-if="!['Signup', 'Signin'].includes($route.name)"-->
+<!--  />-->
 
   <div style="min-height: 60vh">
     <div style="min-height: 60vh">

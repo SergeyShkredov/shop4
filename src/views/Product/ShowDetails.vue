@@ -3,14 +3,14 @@
     <div class="row pt-5">
       <div class="col-md-1"></div>
       <div class="col-md-4 col-12">
-        <img :src="product.productImage" :alt="product.productname" class="img-fluid" />
+        <img :src="product.imageURL" :alt="product.name" class="img-fluid" />
       </div>
       <div class="col-md-6 col-12 pt-3 pt-md-0">
-        <h4>{{ product.productname }}</h4>
+        <h4>{{ product.name }}</h4>
         <h6 class="category font-italic">{{ category.categoryName }}</h6>
-        <h6 class="font-weight-bold">$ {{ product.productPrice }}</h6>
+        <h6 class="font-weight-bold">$ {{ product.price }}</h6>
         <p>
-          {{ product.productDescription }}
+          {{ product.description }}
         </p>
 
         <div class="d-flex flex-row justify-content-between">
@@ -33,6 +33,14 @@
             </button>
           </div>
         </div>
+        <button
+            id="wishlist-button"
+            class="btn mr-3 p-1 py-0"
+            :class="{ product_added_wishlist: isAddedToWishlist }"
+            @click="addToWishList(this.id)"
+        >
+          {{ wishlistString }}
+        </button>
         <button
             id="show-cart-button"
             type="button"
@@ -57,6 +65,8 @@ export default {
       category: {},
       id: null,
       token: null,
+      isAddedToWishlist: false,
+      wishlistString: "Add to wishlist",
       quantity: 1,
     };
   },
@@ -64,11 +74,10 @@ export default {
   methods: {},
   mounted() {
     this.id = this.$route.params.id;
-    this.product = this.products.find((product) => product.id === this.id);
+    this.product = this.products.find((product) => product.id == this.id);
     this.category = this.categories.find(
-        (category) => category.id === this.product.categoryId
+        (category) => category.id == this.product.categoryId
     );
-    this.token = localStorage.getItem("token");
   },
 };
 </script>

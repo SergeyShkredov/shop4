@@ -2,8 +2,6 @@
   <div>
     <div class="card-body">
 
-      <h4 class="card-title">{{ category.name }}</h4>
-
       <router-link :to="{ name: 'ListProducts', params: { id: category.id } }"
       ><h5 class="card-title">{{ category.categoryName }}</h5></router-link>
 
@@ -20,7 +18,7 @@ export default {
     listProducts() {
       this.$router.push({
         name: "ListProducts",
-        params: { id: this.category.categoryId },
+        params: { id: this.category.id },
       });
     },
   },
