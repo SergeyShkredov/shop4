@@ -1,4 +1,10 @@
 <template>
+  <Navbar
+      :cartCount="cartCount"
+      @resetCartCount="resetCartCount"
+      v-if="!['Signup', 'Signin'].includes($route.name)"
+  />
+
   <div style="min-height: 60vh">
     <div style="min-height: 60vh">
       <router-view
@@ -16,6 +22,7 @@
 
 <script>
 import ProductService from "@/services/productService";
+import Navbar from "@/components/Navbar";
 
 export default {
   data() {
@@ -52,6 +59,9 @@ export default {
     this.getProducts()
     this.getCategories()
   },
+  components: {
+    Navbar
+  }
 };
 </script>
 

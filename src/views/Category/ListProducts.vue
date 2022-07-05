@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h4 class="pt-3">{{category.categoryName}}</h4>
+        <h4 class="pt-3">{{category.name}}</h4>
       </div>
     </div>
 
@@ -32,9 +32,8 @@ export default {
   props : [ "baseURL" , "categories" ],
   mounted() {
     this.id = this.$route.params.id;
-    this.categoryIndex = this.categories.findIndex(category => category.id ===this.id);
+    this.categoryIndex = this.categories.findIndex(category => category.id == this.id);
     this.category = this.categories[this.categoryIndex];
-
   }
 }
 </script>

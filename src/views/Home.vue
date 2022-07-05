@@ -1,6 +1,5 @@
 <template>
   <div id="home">
-
     <div id="start-shopping" class="container">
       <div class="row">
         <div class="col-12 text-left">

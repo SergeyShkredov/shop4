@@ -63,10 +63,10 @@ export default {
   props: ["baseURL", "products", "categories"],
   methods: {},
   mounted() {
-    this.productId = this.$route.params.productId;
-    this.product = this.products.find((product) => product.productId === this.productId);
+    this.id = this.$route.params.id;
+    this.product = this.products.find((product) => product.id === this.id);
     this.category = this.categories.find(
-        (category) => category.categoryId === this.product.categoryId
+        (category) => category.id === this.product.categoryId
     );
     this.token = localStorage.getItem("token");
   },

@@ -3,12 +3,12 @@
   <div>
     <div class="card-body">
 
-        <h4 class="card-title">{{ product.productName }}</h4>
-        <div class="card-text">{{ product.productCategory }}</div>
-        <div class="card-text">{{ product.productPrice }}</div>
+        <h4 class="card-title">{{ product.name }}</h4>
+        <div class="card-text">{{ product.category }}</div>
+        <div class="card-text">{{ product.price }}</div>
 
-      <router-link :to="{ name: 'ShowDetails', params: { id: product.productId } }"
-      ><h5 class="card-title">{{ product.productName }}</h5></router-link>
+      <router-link :to="{ name: 'ShowDetails', params: { id: product.id } }"
+      ><h5 class="card-title">{{ product.name }}</h5></router-link>
 
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
     showDetails() {
       this.$router.push({
         name: "ShowDetails",
-        params: { id: this.product.productId },
+        params: { id: this.product.id },
       });
     },
   },
