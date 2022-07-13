@@ -8,7 +8,7 @@
   <div style="min-height: 60vh">
     <div style="min-height: 60vh">
       <router-view
-          v-if="products && categories"
+          v-if="products  && categories"
           :products="products"
           :categories="categories"
           @getProducts="getProducts"
